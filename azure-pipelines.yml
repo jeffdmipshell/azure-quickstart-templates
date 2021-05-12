@@ -21,4 +21,5 @@ steps:
     templateLocation: 'Linked artifact'
     csmFile: '101-vm-simple-linux/azuredeploy.json'
     csmParametersFile: '101-vm-simple-linux/azuredeploy.parameters.json'
+    overrideParameters: '-adminUsername "azadmin" -adminPassword "&nterPlease!21"'
     deploymentMode: 'Validation'
