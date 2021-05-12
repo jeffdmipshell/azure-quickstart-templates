@@ -10,10 +10,15 @@ pool: Default
   #vmImage: windows-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'ES-CE-CUS-EXT-jechase(badceb30-7a80-4167-a047-ce4cb51f5d82)'
+    subscriptionId: 'badceb30-7a80-4167-a047-ce4cb51f5d82'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'rg-cicd'
+    location: 'North Central US'
+    templateLocation: 'Linked artifact'
+    csmFile: '101-vm-simple-linux/azuredeploy.json'
+    csmParametersFile: '101-vm-simple-linux/azuredeploy.parameters.json'
+    deploymentMode: 'Validation'
