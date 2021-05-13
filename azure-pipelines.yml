@@ -19,7 +19,7 @@ steps:
     resourceGroupName: 'rg-cicd'
     location: 'North Central US'
     templateLocation: 'Linked artifact'
-    csmFile: '101-vm-simple-linux/azuredeploy.json'
-    csmParametersFile: '101-vm-simple-linux/azuredeploy.parameters.json'
-    overrideParameters: '-adminUsername "azadmin" -adminPasswordOrKey "&nterPlease!21" -dnsLabelPrefix "jeffslab"'
+    csmFile: 'Azure/101-vm-simple-linux/azuredeploy.json'
+    csmParametersFile: 'Azure/101-vm-simple-linux/azuredeploy.parameters.json'
+    #overrideParameters: '-adminUsername "azadmin" -adminPasswordOrKey "&nterPlease!21" -dnsLabelPrefix "jeffslab"'
     deploymentMode: Incremental
